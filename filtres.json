@@ -1,0 +1,22 @@
+{
+    "filtres": [
+        {
+            "filter_name": "House of Dragon (1080p x264)",
+            "titres": "House of Dragon",
+            "qualite": "1080p",
+            "dossier": "Series/House Of The Dragon"
+        },
+        {
+            "filter_name": "House of Dragon (1080p x265)",
+            "titres": ["House of the Dragon", "House of Dragon"],
+            "qualite": ["1080p", "265", "multi"],
+            "dossier": "Series/House Of The Dragon"
+        },
+        {
+            "filter_name": "Kardashians (1080 FW)",
+            "titres": ["kardashians"],
+            "qualite": ["1080", "FW"],
+            "dossier": "Series/The Kardashians"
+        }        
+    ]
+}
