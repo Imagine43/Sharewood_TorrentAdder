@@ -117,3 +117,137 @@ Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Voir le f
 
 **Avertissement :** Toute utilisation de ce logiciel est à vos propres risques. L'auteur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce logiciel. En utilisant ce logiciel, vous acceptez de dégager l'auteur de toute responsabilité.
 
+## Donations
+
+Si vous trouvez ce projet utile et souhaitez soutenir mon travail, vous pouvez faire un don via [Ko-fi](https://ko-fi.com/imagine43). Toute contribution est grandement appréciée et aide à maintenir le développement de ce projet.
+
+Merci pour votre soutien !
+
+++++++++++++++++++++++
+ENGLISH VERSION
++++++++++++++++++++++++
+
+# Sharewood Torrent Downloader Script
+
+## Description
+
+This Python script allows you to download torrent files from Sharewood.tv using the Sharewood API and a cookie-based authentication mechanism. It extracts data based on keywords defined in a JSON file, checks available torrents, and downloads relevant files. Additionally, it sends notifications via Telegram when a download is found.
+
+## Features
+
+1. **Fetching Data from Sharewood API**
+   - **Function**: `fetch_data_from_api`
+   - **Description**: Retrieves torrent data from the Sharewood API using the specified base URL, API key, and endpoint.
+
+2. **Extracting Relevant Torrents**
+   - **Function**: `extract_id_slug`
+   - **Description**: Extracts torrents that match the specified keywords from the API data.
+
+3. **Managing Login Cookies**
+   - **Function**: `get_login_cookie`
+   - **Description**: Manages the login process by retrieving an authentication cookie using the login information and CSRF token.
+
+4. **Downloading Torrent Files**
+   - **Function**: `download_link`
+   - **Description**: Downloads torrent files and saves them to the specified directory. Also checks the validity of the downloaded files.
+
+5. **Loading Keywords and Login Information**
+   - **Functions**: `load_keywords`, `load_login_info`
+   - **Description**: Loads keywords for filtering torrents and login information from JSON files.
+
+6. **Sending Notifications via Telegram**
+   - **Function**: `send_telegram_message`
+   - **Description**: Sends a notification message via Telegram when relevant torrents are found and downloaded.
+
+7. **Parallel Download Processing**
+   - **Function**: `process_download`
+   - **Description**: Manages the downloading of torrents and sending notifications using a thread pool to parallelize tasks.
+
+## qBittorrent Configuration
+
+To manage automatic downloads via monitored folders, you need to configure qBittorrent as follows:
+
+1. **Configure Monitored Folders in qBittorrent**
+   - Open qBittorrent and go to `Options` > `Downloads`.
+   - Under `Monitored Folders`, add the directory where torrent files will be downloaded by this script.
+
+2. **Ensure Automatic Downloading is Enabled**
+   - Make sure the option to monitor folders and automatically add torrents is enabled.
+
+## Usage
+
+1. **Configure JSON Files**
+   - `filtres.json`: Contains keywords to filter torrents. Example format:
+     ```json
+     {
+       "filtres": [
+         {
+           "titres": ["Example Title"],
+           "qualite": ["Example Quality"],
+           "dossier": "FolderName",
+           "filter_name": "FilterName"
+         }
+       ]
+     }
+     ```
+   - `login.json`: Contains login information to obtain cookies. Example format:
+     ```json
+     {
+       "login_url": "https://www.sharewood.tv/login",
+       "username": "your_username",
+       "password": "your_password"
+     }
+     ```
+
+2. **Modify Script Settings**
+   - Replace `YOURDOWNLOAD_DIR` with the directory where you want to save downloaded files.
+   - Replace `YOURTELEGRAMAPI` and `YOURCHAT_ID` with your Telegram bot information.
+
+3. **Run the Script**
+   - Execute the script from the command line using Python:
+     ```bash
+     python script.py
+     ```
+
+## Dependencies
+
+- `requests`: For HTTP requests.
+- `beautifulsoup4`: For extracting the CSRF token.
+- `concurrent.futures`: For managing parallel downloads.
+
+Install the dependencies via pip:
+```bash
+pip install requests beautifulsoup4
+```
+
+## Logging
+
+Execution logs are recorded in the `Sharewood_TorrentAdder_log.txt` file located in the installation directory. This file contains information about the actions performed by the script as well as errors encountered during execution. The logs include:
+
+- Errors related to HTTP requests and login.
+- Information about files that have already been downloaded.
+- Success or failure messages for download operations.
+- Notifications sent via Telegram.
+
+Be sure to check this file for any issues or to get details about torrent processing.
+
+## Notes
+
+- **API Key and Login Information Verification**: Ensure that your Sharewood API key and login information (username and password) are correct and valid before running the script.
+- **Write Permissions**: Verify that the directory specified for downloads (`YOURDOWNLOAD_DIR`) has the necessary permissions to allow file writing.
+
+## Future Developments
+
+- **Episode Filtering**: Future versions of the script will support filtering torrents by episode, allowing for more precise management of downloads based on specific episodes.
+
+## License
+
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) License. See the [LICENSE](https://github.com/Imagine43/Sharewood_TorrentAdder/blob/main/LICENSE.txt) file for details.
+
+**Disclaimer:** Use of this software is at your own risk. The author cannot be held liable for any direct or indirect damages resulting from the use of this software. By using this software, you agree to hold the author harmless from any liability.
+
+## Donations
+
+If you find this project useful and would like to support my work, you can make a donation via [Ko-fi](https://ko-fi.com/imagine43). Any contribution is greatly appreciated and helps to support the development of this project.
+
+Thank you for your support!
