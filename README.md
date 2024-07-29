@@ -111,3 +111,9 @@ Assurez-vous de vérifier ce fichier pour tout problème ou pour obtenir des dé
 
 - **Filtrage par épisode** : Les prochaines versions du script prendront en charge le filtrage des torrents par épisode, permettant une gestion plus précise des téléchargements en fonction des épisodes spécifiques.
 
+## Licence
+
+Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+**Avertissement :** Toute utilisation de ce logiciel est à vos propres risques. L'auteur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce logiciel. En utilisant ce logiciel, vous acceptez de dégager l'auteur de toute responsabilité.
+
