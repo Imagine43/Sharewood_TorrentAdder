@@ -113,7 +113,7 @@ Assurez-vous de vérifier ce fichier pour tout problème ou pour obtenir des dé
 
 ## Licence
 
-Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Voir le fichier [LICENSE]([LICENSE](https://github.com/Imagine43/Sharewood_TorrentAdder/LICENSE.txt) pour plus de détails.
+Ce projet est sous licence [MIT](https://opensource.org/licenses/MIT). Voir le fichier [LICENSE](https://github.com/Imagine43/Sharewood_TorrentAdder/blob/main/LICENSE.txt) pour plus de détails.
 
 **Avertissement :** Toute utilisation de ce logiciel est à vos propres risques. L'auteur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce logiciel. En utilisant ce logiciel, vous acceptez de dégager l'auteur de toute responsabilité.
 
