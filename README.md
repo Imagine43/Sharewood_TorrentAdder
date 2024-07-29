@@ -34,6 +34,17 @@ Ce script Python permet de télécharger des fichiers torrent depuis Sharewood.t
    - **Fonction**: `process_download`
    - **Description**: Gère le téléchargement des torrents et l'envoi de notifications en utilisant un pool de threads pour paralléliser les tâches.
 
+## Configuration de qBittorrent
+
+Pour gérer les téléchargements automatiquement via des dossiers surveillés, vous devez configurer qBittorrent comme suit :
+
+1. **Configurer les dossiers surveillés dans qBittorrent**
+   - Ouvrez qBittorrent et allez dans `Options` > `Téléchargements`.
+   - Sous `Dossiers surveillés`, ajoutez le répertoire où les fichiers torrents seront téléchargés par ce script.
+
+2. **Vérifiez que le téléchargement automatique est activé**
+   - Assurez-vous que l'option pour surveiller les dossiers et ajouter automatiquement les torrents est activée.
+
 ## Utilisation
 
 1. **Configurer les fichiers JSON**
@@ -78,3 +89,25 @@ Ce script Python permet de télécharger des fichiers torrent depuis Sharewood.t
 Installez les dépendances via pip :
 ```bash
 pip install requests beautifulsoup4
+```
+
+## Journalisation
+
+Les logs d'exécution sont enregistrés dans le fichier `Sharewood_TorrentAdder_log.txt` situé dans le répertoire d'installation. Ce fichier contient des informations sur les actions effectuées par le script ainsi que les erreurs rencontrées pendant l'exécution. Les logs incluent :
+
+- Les erreurs liées aux requêtes HTTP et à la connexion.
+- Les informations sur les fichiers déjà téléchargés.
+- Les messages de succès ou d'échec des opérations de téléchargement.
+- Les notifications envoyées via Telegram.
+
+Assurez-vous de vérifier ce fichier pour tout problème ou pour obtenir des détails sur le traitement des torrents.
+
+## Notes
+
+- **Vérification de la clé API et des informations de connexion** : Assurez-vous que votre clé API de Sharewood et les informations de connexion (nom d'utilisateur et mot de passe) sont corrects et valides avant d'exécuter le script.
+- **Permissions d'écriture** : Vérifiez que le répertoire spécifié pour les téléchargements (`YOURDOWNLOAD_DIR`) possède les permissions nécessaires pour permettre l'écriture des fichiers.
+
+## Futurs Développements
+
+- **Filtrage par épisode** : Les prochaines versions du script prendront en charge le filtrage des torrents par épisode, permettant une gestion plus précise des téléchargements en fonction des épisodes spécifiques.
+
